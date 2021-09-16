@@ -41,6 +41,10 @@ func main() {
 			os.Exit(1)
 		}
 		if passwd == "" {
+			passwd = os.Getenv("SSHCOPYID_PASSWD")
+		}
+		if passwd == "" {
+			passwd = os.Getenv("SSHCOPYID_PASSWD")
 			fmt.Println("passwd cannot be empty")
 			os.Exit(1)
 		}
