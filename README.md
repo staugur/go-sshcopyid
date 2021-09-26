@@ -12,7 +12,7 @@ afterwards, you can log in without password using `ssh` for automated tools.
 
 - If the private key has a phrase, it will be synchronized multiple times, and the authorized_keys of the target will accumulate the contents of the public key; if there is no phrase, it will prompt that it already exists.
 
-- The target server is required to have the same port, user, and passwd.
+- The target server is required to have the same port, user, and passwd(The `passwd` can be set through the environment variable `SSHCOPYID_PASSWD`).
 
 ### Tip
 

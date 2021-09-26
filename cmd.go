@@ -26,9 +26,9 @@ func init() {
 	flag.StringVar(&host, "host", "", "Target server hostname or IP, multiple separated by comma")
 	flag.UintVar(&port, "port", 22, "Target server SSH port")
 	flag.StringVar(&user, "user", "root", "SSH user")
-	flag.StringVar(&passwd, "passwd", "", "SSH password")
+	flag.StringVar(&passwd, "passwd", "", "SSH password(env)")
 	flag.StringVar(&identity, "identity", "", "SSH identity file")
-	flag.StringVar(&passphrase, "passphrase", "", "Private key passphrase")
+	flag.StringVar(&passphrase, "passphrase", "", "Private key passphrase(env)")
 }
 
 func main() {
@@ -44,9 +44,11 @@ func main() {
 			passwd = os.Getenv("SSHCOPYID_PASSWD")
 		}
 		if passwd == "" {
-			passwd = os.Getenv("SSHCOPYID_PASSWD")
 			fmt.Println("passwd cannot be empty")
 			os.Exit(1)
+		}
+		if passphrase == "" {
+			passphrase = os.Getenv("SSHCOPYID_PASSPHRASE")
 		}
 		var wg sync.WaitGroup
 
