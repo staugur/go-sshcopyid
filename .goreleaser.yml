@@ -12,7 +12,7 @@ archives:
       darwin: darwin
       linux: linux
       386: i386
-      amd64: x86_64
+      amd64: amd64
     name_template: "{{ .Binary }}.{{ .Version }}-{{ .Os }}-{{ .Arch }}"
 checksum:
   name_template: 'checksums.txt'
