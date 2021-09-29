@@ -27,7 +27,7 @@ func (s SSH) Sync() (string, error) {
 	timeout := 10 * time.Second
 	ge, _, err := expect.Spawn(cmd, timeout)
 	if err != nil {
-		return "", err
+		return "Unconnected", err
 	}
 	defer ge.Close()
 

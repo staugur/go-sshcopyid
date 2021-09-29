@@ -8,7 +8,7 @@ import (
 	"sync"
 )
 
-const version = "0.1.0"
+const version = "0.1.1"
 
 var (
 	v bool
@@ -53,6 +53,7 @@ func main() {
 		var wg sync.WaitGroup
 
 		hosts := strings.Split(host, ",")
+		isok := true
 		for _, ip := range hosts {
 			wg.Add(1)
 			go func(ip string) {
@@ -60,11 +61,17 @@ func main() {
 					Host: ip, Port: port, User: user, Passwd: passwd,
 					Identity: identity, Passphrase: passphrase,
 				}
-				msg, _ := s.Sync()
+				msg, err := s.Sync()
+				if err != nil {
+					isok = false
+				}
 				fmt.Printf("Sync to %s: %s\n", ip, msg)
 				wg.Done()
 			}(ip)
 		}
 		wg.Wait()
+		if !isok {
+			os.Exit(1)
+		}
 	}
 }
