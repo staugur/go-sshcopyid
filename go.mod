@@ -1,4 +1,4 @@
-module tcw.im/sshcopyid
+module pkg.tcw.im/sshcopyid
 
 go 1.16
 

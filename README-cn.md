@@ -2,7 +2,7 @@
 
 中文 | [English](README.md)
 
-[![Go Reference](https://pkg.go.dev/badge/tcw.im/sshcopyid.svg)](https://pkg.go.dev/tcw.im/sshcopyid)
+[![Go Reference](https://pkg.go.dev/badge/pkg.tcw.im/sshcopyid.svg)](https://pkg.go.dev/pkg.tcw.im/sshcopyid)
 
 golang实现简化版的 `ssh-copy-id` 命令效果，旨在 **无交互式** 同步密钥，自动输入密码，
 之后就可用 `ssh` 免密登录，用于自动化工具。

@@ -2,7 +2,7 @@
 
 [中文](README-cn.md) | English
 
-[![Go Reference](https://pkg.go.dev/badge/tcw.im/sshcopyid.svg)](https://pkg.go.dev/tcw.im/sshcopyid)
+[![Go Reference](https://pkg.go.dev/badge/pkg.tcw.im/sshcopyid.svg)](https://pkg.go.dev/pkg.tcw.im/sshcopyid)
 
 Golang implements a simplified version of the `ssh-copy-id` command effect,
 aiming at **no interactive** synchronization key, automatic password input,
